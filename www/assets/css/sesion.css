@@ -1,0 +1,190 @@
+/* assets/css/auth.css - TEMA TECNOLÓGICO AZUL */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #3b82f6;
+    --secondary: #0ea5e9;
+    --accent: #06b6d4;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --gray-light: #e2e8f0;
+    --tech-gradient: linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #06b6d4 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--tech-gradient);
+}
+
+.contenedor h1 {
+    text-align: center;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contenedor label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.contenedor input[type="text"],
+.contenedor input[type="email"],
+.contenedor input[type="password"],
+.contenedor input[type="number"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--gray-light);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: inherit;
+}
+
+.contenedor input[type="text"]:focus,
+.contenedor input[type="email"]:focus,
+.contenedor input[type="password"]:focus,
+.contenedor input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.contenedor .button {
+    width: 100%;
+    background: var(--tech-gradient);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.contenedor .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.contenedor .button:hover::before {
+    left: 100%;
+}
+
+.contenedor-enlace {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.texto-enlace {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.enlace-registro {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.enlace-registro:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #fecaca;
+    font-size: 0.9rem;
+}
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #a7f3d0;
+    font-size: 0.9rem;
+}
+
+/* Responsive para auth */
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .contenedor h1 {
+        font-size: 1.75rem;
+    }
+}
